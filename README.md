@@ -1,4 +1,4 @@
-# Simple realtime data fro Newburyport commuter rail
+# Simple realtime data for Newburyport commuter rail
 
 
 ## Install
