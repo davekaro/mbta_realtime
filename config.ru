@@ -1,0 +1,2 @@
+require './mbta'
+run Mbta

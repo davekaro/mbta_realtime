@@ -1,0 +1,13 @@
+<ul>
+  <% trips.each do |trip| %>
+    <li>
+      <%= trip[:name] %>
+      <a href="<%= trip[:map_url] %>" target="_blank">Google Map (<%= trip[:lat] %>, <%= trip[:lon] %>)</a>
+      <ul>
+        <% trip[:schedule].each do |stop| %>
+          <li><%= stop[:arrival] %> at <%= stop[:name] %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>

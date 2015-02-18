@@ -1,0 +1,6 @@
+<h1>Trains as of <%= Time.now.strftime("%l:%M %P %-m/%-d/%y") %></h1>
+<h3>Inbound</h3>
+<%= erb :trips, locals: { trips: @inbound_trips } %>
+
+<h3>Outbound</h3>
+<%= erb :trips, locals: { trips: @outbound_trips } %>
