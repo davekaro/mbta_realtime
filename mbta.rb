@@ -1,6 +1,6 @@
-require "sinatra"
-require "rest_client"
-require "sinatra/reloader" if development?
+require 'sinatra'
+require 'rest_client'
+require 'sinatra/reloader' if development?
 
 class Mbta < Sinatra::Application
   get '/' do

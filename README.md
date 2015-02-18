@@ -3,9 +3,7 @@
 
 ## Install
 
-1. `gem install sinatra`
-1. `gem install sinatra-contrib` for development reloading only
-1. `gem install rest-client`
+1. `bundle install`
 
 ## Run
 
