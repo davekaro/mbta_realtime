@@ -1,13 +1,18 @@
-<ul>
+<ul style="list-style-type: none;">
   <% trips.each do |trip| %>
     <li>
-      <%= trip[:name] %>
-      <a href="<%= trip[:map_url] %>" target="_blank">Google Map (<%= trip[:lat] %>, <%= trip[:lon] %>)</a>
-      <ul>
-        <% trip[:schedule].each do |stop| %>
-          <li><%= stop[:arrival] %> at <%= stop[:name] %></li>
-        <% end %>
-      </ul>
+      <div style="float: left;">
+        <%= trip[:name] %>
+        <ul>
+          <% trip[:schedule].each do |stop| %>
+            <li><%= stop[:arrival] %> at <%= stop[:name] %></li>
+          <% end %>
+        </ul>
+      </div>
+      <a href="<%= trip[:map_url] %>" target="_blank" style="float: left; margin-left: 20px;">
+        <img src="<%= trip[:map_image_url] %>" />
+      </a>
+      <div style="clear: both;"></div>
     </li>
   <% end %>
 </ul>

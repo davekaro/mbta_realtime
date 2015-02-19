@@ -29,13 +29,14 @@ class Mbta < Sinatra::Application
         lon = trip["vehicle"]["vehicle_lon"]
         schedule = parse_schedule(id)
         {
-          id:       id,
-          name:     trip["trip_name"],
-          map_url:  map_url(lat, lon),
-          lat:      lat,
-          lon:      lon,
-          speed:    trip["vehicle"]["speed"] || 0,
-          schedule: schedule
+          id:            id,
+          name:          trip["trip_name"],
+          map_url:       map_url(lat, lon),
+          map_image_url: map_image_url(lat, lon),
+          lat:           lat,
+          lon:           lon,
+          speed:         trip["vehicle"]["speed"] || 0,
+          schedule:      schedule
         }
       end
     end
@@ -62,5 +63,9 @@ class Mbta < Sinatra::Application
 
   def map_url(lat, lon)
     "https://www.google.com/maps/place/#{lat},#{lon}"
+  end
+
+  def map_image_url(lat, lon)
+    "http://maps.google.com/maps/api/staticmap?size=300x300&zoom=15&markers=#{lat},#{lon}"
   end
 end
